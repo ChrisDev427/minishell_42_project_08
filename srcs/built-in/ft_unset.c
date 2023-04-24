@@ -6,7 +6,7 @@
 /*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:24:33 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/24 12:42:56 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/24 13:03:29 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,11 @@ void	ft_unset(t_parsing *parse)
 	t_list	*tmp_cmd;
 	char	*s1;
 
+	tmp_cmd = parse->lst_cmdline->next;
 	if (tmp_cmd == NULL)
 		return ;
-	tmp_cmd = parse->lst_cmdline->next;
+	if (ft_strcmp(tmp_cmd->str, "_") == 0)
+		return ;
 	while (tmp_cmd)
 	{
 		s1 = ft_set_str_to_comp(tmp_cmd->str);
