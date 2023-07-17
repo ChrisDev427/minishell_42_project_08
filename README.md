@@ -1,43 +1,48 @@
 # minishell
+The Minishell project is the first group project at École 42.
+It involves creating a minimalist shell in C that can interpret simple commands.
 
-Le projet Minishell est le premier projet en binome a l'ecole 42.
-Il consiste à créer un shell minimaliste en C qui peut interpréter des commandes simples.
+Objectives
 
-Objectifs
+Create a shell that can display a prompt and wait for a new command.
+Implement functional command history.
+Search for and execute the correct executable based on the PATH environment variable or a relative or absolute path.
+Avoid using more than one global variable.
+Do not interpret unclosed quotes or unrequested special characters such as backslashes () or semicolons (;).
+Handle single quotes (') to prevent the shell from interpreting special characters.
+Allowed Functions
 
-Créer un shell qui peut afficher un prompt en attente d'une nouvelle commande
-Posséder un historique fonctionnel
-Chercher et lancer le bon exécutable en se basant sur la variable d'environnement PATH, ou sur un chemin relatif ou absolu
-Ne pas utiliser plus d'une variable globale
-Ne pas interpréter de quotes (guillemets) non fermés ou de caractères spéciaux non demandés dans le sujet, tels que \ (le backslash) ou ; (le point-virgule)
-Gérer les single quotes (') qui doivent empêcher le shell d'interpréter les caractères spéciaux
-
-Fonctions autorisées
-
-Les fonctions suivantes sont autorisées pour le projet :
+The following functions are allowed for the project:
 
 readline, rl_clear_history, rl_on_new_line, rl_replace_line, rl_redisplay, add_history
 printf, malloc, free, write
-access, open, read, close, fork, wait, waitpid, wait3, wait4, signal, sigaction, sigemptyset, sigaddset, kill, exit, stat, lstat, fstat, unlink, execve, dup, dup2, pipe, opendir, readdir, closedir, strerror, perror, isatty, ttyname, ttyslot, ioctl, getenv, tcsetattr, tcgetattr, tgetent, tgetflag, tgetnum, tgetstr, tgoto, tputs.
+access, open, read, close
+fork, wait, waitpid, wait3, wait4, signal, sigaction, sigemptyset, sigaddset, kill, exit
+stat, lstat, fstat, unlink, execve
+dup, dup2, pipe
+opendir, readdir, closedir
+strerror, perror
+isatty, ttyname, ttyslot, ioctl
+getenv
+tcsetattr, tcgetattr
+tgetent, tgetflag, tgetnum, tgetstr, tgoto, tputs
+The following built-in functions have been recoded:
 
-Les built-in suivants ont été recodés : 
+echo with the -n option
+cd only with a relative or absolute path
+pwd without any options
+export without any options
+unset without any options
+env without any options or arguments
+exit without any options
+Unclosed quotes have been interpreted.
 
-◦ echo et l’option -n
-◦ cd uniquement avec un chemin relatif ou absolu 
-◦ pwd sans aucune option
-◦ export sans aucune option
-◦ unset sans aucune option
-◦ env sans aucune option ni argument
-◦ exit sans aucune option
+Usage
 
-Les quotes non fermés ont été interpretés.
+To compile the program, you can use the provided Makefile by running the command make.
 
-Utilisation
-
-Pour compiler le programme, vous pouvez utiliser le Makefile fourni en tapant la commande make.
-
-Une fois le programme compilé, vous pouvez l'exécuter en tapant ./minishell.
+Once the program is compiled, you can execute it by typing ./minishell.
 
 Conclusion
 
-Le projet Minishell a permis de développer des compétences en programmation en C, en particulier dans la manipulation de processus et de descripteurs de fichier. Cela a également permis de mieux comprendre le fonctionnement d'un shell.
+The Minishell project allowed for the development of C programming skills, particularly in process manipulation and file descriptors. It also provided a better understanding of how a shell works.
