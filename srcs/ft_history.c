@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_history.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:19:08 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/24 10:19:10 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/11/14 12:13:14 by chris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ void	ft_check_history_size(t_parsing *parse)
 
 	nb_line = 0;
 	parse->fd_history[0] = open(".history", O_RDONLY);
+	
 	if (parse->fd_history[0] < 0)
 		perror(".history");
+	
 	while (1)
 	{
 		s = get_next_line(parse->fd_history[0]);
